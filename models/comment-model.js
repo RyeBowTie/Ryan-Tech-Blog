@@ -1,4 +1,3 @@
-const { INTEGER } = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -17,7 +16,7 @@ Comment.init(
         allowNull: false
     },
     post_id: {
-        type: DataTypes>INTEGER,
+        type: DataTypes.INTEGER,
         references: {
             model: 'post',
             id: 'id'
@@ -36,7 +35,7 @@ Comment.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'trips',
+        modelName: 'comment',
     }
 );
 
