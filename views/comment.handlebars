@@ -1,0 +1,28 @@
+
+<div class="comment-section">
+
+<div class="card">
+    <div class="card-body">
+        <h3>{{posts.title}}</h3>
+        <p>{{posts.text}}</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <textarea id="comment"></textarea>
+        <button value={{posts.id}} class="btn btn-lg btn-primary" id="submit">Comment</button>
+    </div>
+</div>
+{{#each posts.comments as |comment|}}
+<div class="card">
+    <div class="card-body">
+        <p>{{comment.comment_text}}</p>   
+    </div>
+</div>
+{{/each}}
+
+
+
+</div>
+<script src="/js/submitcomment.js"></script>

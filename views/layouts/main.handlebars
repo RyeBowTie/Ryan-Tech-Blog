@@ -11,26 +11,33 @@
 </head>
 <body>
     <header>
-        <h1>Ryan's Tech Blog</h1>
+        <a href="/"><h1>Ryan's Tech Blog</h1></a>
         {{#if logged_in}}
         <div class="navigation">
-            <button id="logout" value="logout">
+            <button id="logout" class="btn btn-primary btn-lg">Logout</button>
+            <a href="/post" class="btn btn-primary btn-lg">Post</a>
         </div>
         {{else}}
         <div class="navigation">
-            <a href="/login">Login</a>
-            <a href="">Register</a>
+            <a href="/login" class="btn btn-primary btn-lg">Login</a>
+            <a href="/register" class="btn btn-primary btn-lg">Register</a>
         </div>
         {{/if}}
-
     </header>
+
+
+    <main>
     {{{ body }}}
-</body>
+    </main>
+
+
+
 {{#if logged_in}} 
+
 <script src="js/logout.js"></script>
-{{else}}
-<script src="js/login.js"></script>
+
 {{/if}}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
 </body>

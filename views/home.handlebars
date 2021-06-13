@@ -1,1 +1,11 @@
-<h1>Can you see me?</h1>
+<div class="posts">
+{{#each posts as |post| }}
+<div class="card-body">
+    <h3>{{post.title}}</h3>
+    <p>{{post.text}}</p>
+    <button value="{{post.id}}" class="btn btn-lg btn-primary comment">Comment</button>
+</div>
+{{/each}}
+</div>
+
+<script src="js/comment.js"></script>
