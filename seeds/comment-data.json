@@ -1,0 +1,27 @@
+[
+    {
+        "comment_text": "Fusce rutrum nulla magna, eu fermentum augue molestie et. Sed efficitur lacus ac arcu euismod, vitae faucibus nibh lacinia. Vestibulum ut molestie erat.",
+        "post_id": "1",
+        "user_id": "1"
+    },
+    {
+        "comment_text": "Morbi vehicula purus ac magna pellentesque rutrum. Sed dapibus sapien eget nulla consequat aliquet. Vestibulum vestibulum libero risus, sit amet tincidunt ligula bibendum vel.",
+        "post_id": "1",
+        "user_id": "1"
+    },
+    {
+        "comment_text": "Mauris ut cursus justo. ",
+        "post_id": "3",
+        "user_id": "3"
+    },
+    {
+        "comment_text": "Cras turpis lectus, euismod quis felis ut, finibus condimentum lectus. ",
+        "post_id": "11",
+        "user_id": "1"
+    },
+    {
+        "comment_text": "Curabitur dictum cursus sem. Praesent augue nunc, tristique vitae placerat at, egestas ut ipsum. Nullam cursus lectus augue, at rutrum nunc faucibus vel. Phasellus hendrerit ipsum at libero malesuada volutpat. Duis eleifend aliquam nisl, in sodales mi dictum semper. Donec sit amet posuere felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer tempus, dui quis dictum accumsan, tortor elit volutpat purus, nec pulvinar nisl tortor vel mauris. Duis non fermentum purus. Ut posuere posuere sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+        "post_id": "7",
+        "user_id": "5"
+    }
+]

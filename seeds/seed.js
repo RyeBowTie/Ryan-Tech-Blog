@@ -1,4 +1,4 @@
-const sequelize = require('../../config/connection');
+const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 
 const userData = require('./user-data.json');

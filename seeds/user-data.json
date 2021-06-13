@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Bianka Churchill",
+        "email": "bchurchill@email.com",
+        "password": "password123"
+    },
+    {
+        "name": "Amani Mcleod",
+        "email": "amcleod@email.com",
+        "password": "password123"
+    },
+    {
+        "name": "Franky Pace",
+        "email": "fpace@email.com",
+        "password": "password123"
+    },
+    {
+        "name": "Myla Barton",
+        "email": "mbarton@email.com",
+        "password": "password123"
+    },
+    {
+        "name": "Georgina Forbes",
+        "email": "gforbes@email.com",
+        "password": "password123"
+    },
+    {
+        "name": "Julian Lake",
+        "email": "jlake@email.com",
+        "password": "password123"
+    }
+]
