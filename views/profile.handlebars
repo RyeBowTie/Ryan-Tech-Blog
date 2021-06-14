@@ -1,18 +1,30 @@
-<div class="posts">
+
 {{#each posts as |post| }}
-<div class="card-body">
-    <h3>{{post.title}}</h3>
-    <p>{{post.text}}</p>
-    <button value="{{post.id}}" class="btn btn-lg btn-primary delete">Delete</button>
+<div class="card">
+    <div class="card-header">
+        <h3>{{post.title}}</h3>
+        <h6>Posted On {{format_date post.updatedAt}}</h6>
+    </div>
+    <div class="card-body">
+        <p>{{post.text}}</p>
+        <div>
+            <button value="{{post.id}}" class="btn btn-lg  m-1 delete button">Delete</button>
+            <a href="/update/{{post.id}}" class="btn btn-lg  m-1 update button">Update</a>
+        </div>
+    </div>
 </div>
 {{#each post.comments as |comment|}}
 <div class="card">
+    <div class="card-header">
+        <h6>{{comment.user.name}}</h6>
+        <h6>Posted On {{format_date post.updatedAt}}</h6>
+    </div>
     <div class="card-body">
         <p>{{comment.comment_text}}</p>   
     </div>
 </div>
 {{/each}}
 {{/each}}
-</div>
+
 
 <script src="/js/delete.js"></script>

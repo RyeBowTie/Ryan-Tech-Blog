@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <form method="POST">
+            <div class="form-group">
+                <label for="post-title" id="old-title">{{posts.title}}</label>
+                <input type="text" class="form-control" id="update-title" placeholder="What is the new title">
+            </div>
+            <div class="form-group">
+                <label for="post-text">Please update your post below</label>
+                <textarea type="text" class="form-control" id="update-text" rows="10" cols="100">{{posts.text}}</textarea>
+            </div>
+            <div class="">
+                <button type="submit" class="btn button btn-lg" id="update" value="{{posts.id}}">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/update.js"></script>

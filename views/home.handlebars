@@ -1,11 +1,17 @@
-<div class="posts">
+
 {{#each posts as |post| }}
-<div class="card-body">
-    <h3>{{post.title}}</h3>
-    <p>{{post.text}}</p>
-    <button value="{{post.id}}" class="btn btn-lg btn-primary comment">Comment</button>
+<div class="card">
+        <div class="card-header">
+            <h3>{{post.title}}</h3>
+            <h6>By {{post.user.name}}</h6>
+            <h6>Posted On {{format_date post.updatedAt}}</h6>
+        </div>
+    <div class="card-body">
+        <p>{{post.text}}</p>
+        <button value="{{post.id}}" class="btn btn-lg comment button">Comment</button>
+    </div>
 </div>
 {{/each}}
-</div>
+
 
 <script src="/js/comment.js"></script>

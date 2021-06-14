@@ -1,28 +1,32 @@
 
-<div class="comment-section">
+
 
 <div class="card">
-    <div class="card-body">
+    <div class="card-header">
         <h3>{{posts.title}}</h3>
+        <h6>Posted On {{format_date posts.updatedAt}}</h6>
+    </div>
+    <div class="card-body">
         <p>{{posts.text}}</p>
+         <textarea id="comment" rows="4" cols="50"></textarea>
+        <button value={{posts.id}} class="btn btn-lg button" id="submit">Comment</button>
     </div>
 </div>
 
+
 <div class="card">
-    <div class="card-body">
-        <textarea id="comment"></textarea>
-        <button value={{posts.id}} class="btn btn-lg btn-primary" id="submit">Comment</button>
-    </div>
-</div>
 {{#each posts.comments as |comment|}}
-<div class="card">
+    <div class="card-header">
+        <h6>{{comment.user.name}}</h6>
+        <h6>Post On {{format_date comment.updatedAt}}</h6>
+    </div>
     <div class="card-body">
         <p>{{comment.comment_text}}</p>   
     </div>
-</div>
 {{/each}}
-
-
-
 </div>
+
+
+
+
 <script src="/js/submitcomment.js"></script>
