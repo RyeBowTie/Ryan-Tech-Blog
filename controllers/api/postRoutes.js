@@ -34,6 +34,28 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+});
+
+router.put('/:id', async (req,res) => {
+    try{
+        if (req.session.logged_in) {
+            const postData = await Post.update({
+                title: req.body.title,
+                text: req.body.text
+                },
+                {
+                where: {
+                    id: req.params.id
+                },  
+            })
+            res.status(200).json(postData);
+        } else {
+            res.redirect('/login');
+        }
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
 })
 
 module.exports = router;

@@ -13,9 +13,18 @@ router.get('/', async (req, res) => {
         order:[['updatedAt',  'DESC']]
       });
       const posts = postData.map((post) => post.get({ plain: true }));
+      // res.json(posts)
       res.render('home', { posts, logged_in: req.session.logged_in });
     } else {
-      res.render('login');
+      const postData = await Post.findAll({
+        include: {
+          model: User,
+          as: 'user'
+        },
+        order:[['updatedAt',  'DESC']]
+      });
+      const posts = postData.map((post) => post.get({ plain: true }));
+      res.render('home', {posts});
     }
   } catch (err) {
     res.status(500).json(err);
@@ -63,10 +72,16 @@ router.get('/post/:id', async (req, res) => {
         },
         include: {
           model: Comment,
-          order: [['updatedAt',  'DESC']]
-        }
+          order: [['comment.createdAt',  'ASC']],
+          include:
+          {
+            model: User,
+            as: 'user',
+          }
+        },
       })
       const posts = postData.get({ plain: true});
+      // res.json(posts)
       res.render('comment', {posts, logged_in:req.session.logged_in})
     } else {
       res.render('login');
@@ -85,14 +100,36 @@ router.get('/profile', async (req, res) => {
         },
         include: {
           model: Comment,
-          order: [['updatedAt',  'DESC']]
-        }
+          order: [['updatedAt',  'DESC']],
+          include: {
+            model: User,
+            as: 'user'
+          }
+        },
+
       })
       const posts = postData.map((post) => post.get({ plain: true }));
       // res.json(posts)
       res.render('profile', { posts, logged_in: req.session.logged_in });
+    } else {
+      res.render('login');
     }
 
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/update/:id', async (req, res) => {
+  try {
+
+    if (req.session.logged_in) {
+      const postData = await Post.findByPk(req.params.id)
+      const posts = postData.get({ plain: true});
+      res.render('update', { posts, logged_in: req.session.logged_in })
+    } else {
+      res.render('login');
+    }
   } catch (err) {
     res.status(500).json(err);
   }
