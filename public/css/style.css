@@ -1,35 +1,106 @@
-html, body {
-    height: 100%;
+:root {
+--maximum-blue-purple: #bcb6ffff;
+--nickel: #726e60ff;
+--light-yellow: #fffbdbff;
+--dark-purple: #230c33ff;
+--purple-navy: #585191ff;
+
 }
 
 
+html, body {
+    height: 100%;
+    background-color: var(--maximum-blue-purple);
+    
+    
+}
+
+#title {
+    text-decoration: none;
+    color: inherit;
+    color: var(--light-yellow);
+    font-family: 'Kanit', sans-serif;
+    font-size: 4rem;
+}
 
 header {
-    background-color: aqua;
+    background-color: var(--dark-purple);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 100px;
+    height: 150px;
+    margin-bottom: 5%;
+    box-shadow: 0px 10px 10px var(--light-yellow);
+    
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: fit-content;
+    
+}
+
+.nav{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
 }
 
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 0px 20%;
+    align-items: center; 
+    flex-flow: column;
+  
 }
+
+.card {
+    width: 50%;
+    margin-bottom: 7%;
+    background-color: var(--light-yellow);
+    border: 5px solid var(--purple-navy);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card-header {
+    background-color: var(--purple-navy);
+    color: var(--light-yellow);
+    text-align: left;
+    padding-left: 5%;
+    font-family: 'Raleway', sans-serif;
+}
+
 .card-body {
     display: flex;
     flex-flow:column nowrap;
     justify-content: center;
     align-items: center;
-    border: 4px solid black;
-    padding: 2rem;
-    margin: 2rem;
+    padding: 3rem;
+    font-family: 'Stint Ultra Condensed'; 
+    font-size: 1.8rem;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kanit', sans-serif ;
+}
+
 .form-group {
     margin: 10%;
+    text-align: center;
+    padding: 1%;
+}
+
+label {
+    margin-bottom: 5%;
+    font-size: 1.25rem;
 }
 
 .posts{
@@ -40,6 +111,40 @@ main {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: center;
-    height: fit-content;
+    align-items: center;    
+}
+
+textarea {
+   width: 100%; 
+   margin-bottom: 5%;
+   
+}
+
+.btn {
+    background-color: var(--nickel);
+    color: var(--light-yellow);
+}
+
+.button {
+    position: relative;
+    top: 2rem;
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif ;
+}
+
+
+
+p {
+    text-align: left;
+}
+
+@media only screen and (max-width: 700px) {
+    .card {
+        width: 95%;
+    }
+
+    .card-body {
+        padding: none;
+    }
+    
 }
