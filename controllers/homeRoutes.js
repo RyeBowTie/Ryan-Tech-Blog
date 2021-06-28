@@ -72,12 +72,12 @@ router.get('/post/:id', async (req, res) => {
         },
         include: {
           model: Comment,
-          order: [['comment.createdAt',  'ASC']],
+          order:[['updatedAt',  'DESC']],
           include:
           {
             model: User,
             as: 'user',
-          }
+          },
         },
       })
       const posts = postData.get({ plain: true});
